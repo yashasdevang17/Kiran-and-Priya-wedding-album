@@ -1,27 +1,20 @@
-# Kiran ♥ Priya Wedding Album — Free deployment
+# Kiran ♥ Priya Wedding Album
 
-This is a static GitHub Pages site with Supabase for shared photo/video storage and wishes. The original design and embedded couple photo are retained.
+The wedding album website is committed to this repository.
 
-## 1. Create the free Supabase backend
-1. Create a project at https://supabase.com/ (Free plan).
-2. Open **SQL Editor** → **New query**, paste `supabase-setup.sql`, and run it. This creates the tables, public-read/guest-write policies, and public media bucket.
-3. Open **Project Settings → API**. Copy the Project URL and the `anon` / publishable public key.
-4. Edit `config.js` and replace `YOUR_SUPABASE_PROJECT_URL` and `YOUR_SUPABASE_ANON_KEY`. Do not use a `service_role` or secret key in browser code.
+## Publish with GitHub Pages
+1. Open **Settings → Pages** in this repository.
+2. Under **Build and deployment → Source**, select **GitHub Actions**.
+3. The workflow at `.github/workflows/deploy-pages.yml` will publish the site from the `main` branch.
+4. The project URL will be: https://yashasdevang17.github.io/Kiran-and-Priya-wedding-album/
 
-## 2. Publish free on GitHub Pages
-1. Create/sign in to https://github.com/ and create a **Public** repository, e.g. `kiran-priya-wedding`.
-2. Upload `index.html` and `config.js` to the repository root. (You may also upload this README and SQL file.)
-3. In repository **Settings → Pages**, under **Build and deployment**, choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then Save.
-4. Wait for GitHub Pages to publish. The public URL will be `https://YOUR-GITHUB-USERNAME.github.io/kiran-priya-wedding/`. Share that link.
+## Enable shared uploads and wishes
+1. Create a free project at https://supabase.com/.
+2. In the Supabase SQL Editor, run `supabase-setup.sql`.
+3. In Project Settings → API, copy the Project URL and anon/publishable public key.
+4. Replace the two placeholders in `config.js` and commit the file.
+5. Never put a Supabase service_role/secret key in browser code.
 
-## Features
-- Public live photo/video gallery; upload, view, and download.
-- Guest wishes, replies, and hearts.
-- Responsive layout and original hero image.
-- Maximum upload size is 50 MB per file in this free setup.
+Until the Supabase URL and public anon key are configured, the page can be hosted but guest photo/video uploads and wishes will remain unavailable.
 
-## Important free-tier and privacy notes
-- GitHub Pages is static hosting; Supabase stores visitor uploads and messages.
-- Supabase Free currently includes 1 GB file storage and a limited monthly transfer allowance; large wedding videos can use it up quickly. Free projects may pause after a week of inactivity. Check current limits before the event.
-- This setup intentionally allows anyone with the link to read, upload, and post. It has no sign-in or moderation. Do not upload private/sensitive media. Anyone can share the public URL, and public media can be downloaded. For stronger protection, add an upload approval/moderation step or a guest passcode before sharing widely.
-- The website is not published until the Supabase configuration and GitHub Pages steps above are completed.
+The upload setup is public-link access with no sign-in or moderation. Only use it for media intended to be publicly visible and downloadable.
