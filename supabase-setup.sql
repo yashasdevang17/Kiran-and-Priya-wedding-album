@@ -53,3 +53,10 @@ drop policy if exists "Public can view wedding media" on storage.objects;
 create policy "Public can view wedding media" on storage.objects for select to anon using (bucket_id='wedding-media');
 drop policy if exists "Anyone can upload wedding media" on storage.objects;
 create policy "Anyone can upload wedding media" on storage.objects for insert to anon with check (bucket_id='wedding-media');
+
+-- Data API table privileges (RLS policies above still control row access).
+grant usage on schema public to anon;
+grant select, insert on table public.wishes to anon;
+grant select, insert on table public.replies to anon;
+grant select, insert on table public.likes to anon;
+grant select, insert on table public.media to anon;
