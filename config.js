@@ -1,6 +1,5 @@
-// Paste the Project URL and anon/public key from Supabase > Project Settings > API.
-// NEVER put a service_role/secret key in this file.
+// Public Supabase project settings. The publishable key is safe for browser use with RLS enabled.
 window.WEDDING_CONFIG = {
-  url: "YOUR_SUPABASE_PROJECT_URL",
-  anonKey: "YOUR_SUPABASE_ANON_KEY"
+  url: "https://csfjmndbzrcxdipeplvi.supabase.co",
+  anonKey: "sb_publishable_wDfMh8J6Ef_4EfXFDQ7-hA_eqh2nUyj"
 };
